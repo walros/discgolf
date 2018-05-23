@@ -1,0 +1,78 @@
+{
+  "name": "newapp",
+  "version": "1.0.0",
+  "description": "app for discgolf scores",
+  "main": "index.js",
+  "scripts": {
+    "start-dev-server": "babel-watch run-server.js",
+    "start-hot": "BABEL_DISABLE_CACHE=1 node webpack/server/",
+    "dev": "concurrently --kill-others \"npm run start-hot\" \"npm run start-dev-server\"",
+    "clean-build": "rm -rf build",
+    "build": "npm run clean-build && node -r babel-register node_modules/webpack/bin/webpack --config webpack/webpack.config.all.js --progress --profile --colors",
+    "build-run": "npm run build && npm run start-server",
+    "production": "ENV=production npm run build-run",
+    "testing": "ENV=testing npm run build-run",
+    "start-server": "webpack_isHot=false node run-server.js",
+    "eslint": "eslint --max-warnings 0 src webpack *.js",
+    "migrate": "knex-migrate",
+    "knex": "knex",
+    "test": "npm run eslint"
+  },
+  "author": "walros",
+  "license": "ISC",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "babel-watch": "^2.0.6",
+    "concurrently": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "eslint": "^4.1.1",
+    "webpack-config-vacuumlabs": "^2.0.1",
+    "webpack-dev-middleware": "^1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-hot-middleware": "^2.20.0",
+    "autoprefixer": "^7",
+    "babel-core": "^6",
+    "babel-loader": "^7",
+    "babel-plugin-transform-decorators-legacy": "^1",
+    "babel-plugin-transform-react-constant-elements": "^6",
+    "babel-preset-env": "^1",
+    "css-loader": "^0.28",
+    "eslint-loader": "^1",
+    "extract-text-webpack-plugin": "^3",
+    "file-loader": "^0.11",
+    "node-sass": "^4",
+    "postcss-loader": "^2",
+    "react": "^16.0.0-rc.3",
+    "react-dom": "^16.0.0-rc.3",
+    "sass-loader": "^6",
+    "style-loader": "^0.18",
+    "url-loader": "^0.5",
+    "webpack": "^3",
+    "webpack-isomorphic-tools": "^3",
+    "whatwg-fetch": "^2",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walros/discgolf.git"
+  },
+  "keywords": [
+    "discgolf"
+  ],
+  "bugs": {
+    "url": "https://github.com/walros/discgolf/issues"
+  },
+  "homepage": "https://github.com/walros/discgolf#readme"
+}

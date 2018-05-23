@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #e9ebee;
+
+  @media print {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    padding: 0;
+    background-color: #fff;
+  }
+}

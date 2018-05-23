@@ -1,0 +1,14 @@
+{
+  "javascript": {
+    "app": "http://localhost:8888/app.js"
+  },
+  "styles": {},
+  "assets": {
+    "./app/assets/scss/style.scss": {
+      "_style": "* {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box; }\n  *:hover, *:active, *:focus {\n    outline: 0; }\n\nbody {\n  font-family: 'Raleway', sans-serif;\n  font-weight: normal;\n  font-size: 1em;\n  padding-top: 50px;\n  padding-bottom: 20px;\n  background-color: #e9ebee; }\n  @media print {\n    body {\n      -webkit-print-color-adjust: exact;\n      color-adjust: exact;\n      padding: 0;\n      background-color: #fff; } }\n"
+    }
+  },
+  "webpack": {
+    "version": "3.12.0"
+  }
+}
